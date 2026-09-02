@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Todo List 2</title>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+		updateList();
+		
+		$("#enter_item").click(function() {
+			$.post("EndpointServlet", { newItem : $("#nameInput").val()});
+			updateList();
+		});
+	});
+</script>
+
+</head>
+<body>
+
+<ul id="my_list"></ul>
+
+<input type="text" id="nameInput">
+
+<button id="enter_item">Enter!</button>
+
+</body>
+
+<script>
+function updateList() {
+	$.get("EndpointServlet", function(d) {
+		console.log(d);
+		
+		var items = $.parseJSON(d);
+		
+		$("#my_list").empty();
+		
+		var x = $("#my_list");
+		
+		for (i = 0; i < items.length; i++) {
+			console.log(items[i]);
+			
+			x.append("<li id='list_entry'>" + items[i] + "</li>");
+		}
+	});
+}
+</script>
+
+</html>

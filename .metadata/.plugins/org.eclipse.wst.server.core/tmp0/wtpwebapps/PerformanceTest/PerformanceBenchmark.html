@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="scripts/jquery-3.1.1.min.js"></script>
+<script src="scripts/lodash.js"></script>
+<script src="scripts/benchmark.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+		$("#factorial_one").click(function() {
+			document.write(factorial_one($("#nameInput").val()));
+			});
+});
+</script>
+</head>
+<body>
+<input type="text" id="nameInput">
+
+<button id="factorial_one">Factorial one!</button>
+<script>
+var  bench = new  Benchmark('foo ', fn, {
+//  displayed  by  Benchmark#toString  if `name ` is not  available
+'id ': 'xyz ',
+//  called  when  the  benchmark  starts  running
+'onStart ': onStart ,
+//  called  after  each  run  cycle
+'onCycle ': onCycle ,
+//  called  when  aborted
+'onAbort ': onAbort ,
+//  called  when a test  errors
+'onError ': onError ,
+//  called  when  reset
+'onReset ': onReset ,
+//  called  when  the  benchmark  completes  running
+'onComplete ':  onComplete ,
+//  compiled/called  before  the  test  loop
+'setup ': setup ,
+//  compiled/called  after  the  test  loop
+'teardown ':  teardown
+});
+function  regfoo () {
+	/world/.test('Hello  World!');
+	}
+	var  bench = new  Benchmark ("foo  test",regfoo );
+	bench.run();
+	bench.hz;
+	
+</script>
+</body>
+<script>
+function factorial_one(n) {
+	  if (n === 0) {
+		    return 1;
+		  }
+		  
+		  // This is it! Recursion!!
+		  return n * factorial(n - 1);
+		}
+</script>
+</html>

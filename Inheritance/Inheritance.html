@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+function  ParentClass(name) {
+	this.name = name || 'default ';
+}
+ParentClass.prototype.answer = function  () {
+	return  this.name;
+};
+function  SubClass(name) {}
+SubClass.prototype = new  ParentClass ();
+</script >
+</head>
+<body>
+
+</body>
+</html>
