@@ -1,0 +1,11 @@
+# Eclipse workspace and build output
+.metadata/
+.recommenders/
+Servers/
+bin/
+build/
+*.class
+
+# OS
+.DS_Store
+Thumbs.db
